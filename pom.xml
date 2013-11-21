@@ -34,6 +34,114 @@ limitations under the License.
 
   <dependencies>
     <dependency>
+	   <groupId>org.apache.hadoop</groupId>
+	   <artifactId>hadoop-core</artifactId>
+       <version>1.2.1</version>
+       <exclusions>
+           <exclusion>
+              <groupId>commons-cli</groupId>
+              <artifactId>commons-cli</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>xmlenc</groupId>
+              <artifactId>xmlenc</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>com.sun.jersey</groupId>
+              <artifactId>jersey-core</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>com.sun.jersey</groupId>
+              <artifactId>jersey-server</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>asm</groupId>
+              <artifactId>asm</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>commons-io</groupId>
+              <artifactId>commons-io</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>commons-httpclient</groupId>
+              <artifactId>commons-httpclient</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>commons-codec</groupId>
+              <artifactId>commons-codec</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-math</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>commons-net</groupId>
+              <artifactId>commons-net</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jetty</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>servlet-api</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jetty-util</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>tomcat</groupId>
+              <artifactId>jasper-runtime</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>tomcat</groupId>
+              <artifactId>jasper-compiler</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jsp-api-2.1</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>servlet-api-2.5</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jsp-2.1</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>ant</groupId>
+              <artifactId>ant</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>commons-el</groupId>
+              <artifactId>commons-el</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>net.java.dev.jets3t</groupId>
+              <artifactId>jets3t</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>hsqldb</groupId>
+              <artifactId>hsqldb</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>oro</groupId>
+              <artifactId>oro</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.eclipse.jdt</groupId>
+              <artifactId>core</artifactId>
+           </exclusion>
+           <exclusion>
+              <groupId>org.codehaus.jackson</groupId>
+              <artifactId>jackson-mapper-asl</artifactId>
+           </exclusion>
+       </exclusions>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.sqoop</groupId>
       <artifactId>sqoop-core</artifactId>
     </dependency>
@@ -43,6 +151,13 @@ limitations under the License.
       <artifactId>sqoop-common</artifactId>
     </dependency>
 
+    <dependency>
+	   <groupId>org.apache.sqoop</groupId>
+       <artifactId>sqoop-server</artifactId>
+	   <version>1.99.2</version>
+       <type>war</type>
+    </dependency>
+            
     <dependency>
       <groupId>org.apache.sqoop.submission</groupId>
       <artifactId>sqoop-submission-mapreduce</artifactId>
@@ -59,14 +174,6 @@ limitations under the License.
       <artifactId>sqoop-connector-generic-jdbc</artifactId>
     </dependency>
 
-<!--
-    <dependency>
-      <groupId>org.apache.sqoop.connector</groupId>
-      <artifactId>sqoop-connector-mysql-jdbc</artifactId>
-      <version>2.0.0-SNAPSHOT</version>
-    </dependency>
--->
-
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
@@ -77,29 +184,11 @@ limitations under the License.
       <groupId>com.googlecode.json-simple</groupId>
       <artifactId>json-simple</artifactId>
     </dependency>
-    
-    <dependency>
-       <groupId>org.glassfish.jersey.containers</groupId>
-       <artifactId>jersey-container-servlet</artifactId>
-       <version>2.3</version>
-    </dependency>
-    
+
     <dependency>
        <groupId>com.sun.jersey</groupId>
        <artifactId>jersey-json</artifactId>
        <version>${jersey-version}</version>
-    </dependency>
-   
-    <dependency>
-       <groupId>org.mockito</groupId>
-       <artifactId>mockito-all</artifactId>
-       <scope>test</scope>
-    </dependency>
-
-    <dependency>
-       <groupId>org.springframework</groupId>
-       <artifactId>spring-test</artifactId>
-       <version>3.2.4.RELEASE</version>
     </dependency>
 
     <dependency>
@@ -125,6 +214,12 @@ limitations under the License.
        <groupId>org.hibernate</groupId>
        <artifactId>hibernate-validator</artifactId>
        <version>4.3.1.Final</version>
+       <exclusions>
+          <exclusion>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>org.jboss.logging</artifactId>
+          </exclusion>
+       </exclusions>
     </dependency>
 
     <dependency>
@@ -134,15 +229,27 @@ limitations under the License.
     </dependency>
     
     <dependency>
-       <groupId>org.thymeleaf</groupId>
-       <artifactId>thymeleaf-spring3</artifactId>
-       <version>2.0.18</version>
-    </dependency>
-
-    <dependency>
        <groupId>commons-configuration</groupId>
        <artifactId>commons-configuration</artifactId>
        <version>1.6</version>
+       <exclusions>
+          <exclusion>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils-core</artifactId>
+          </exclusion>
+       </exclusions>
     </dependency>
     <dependency>
        <groupId>commons-logging</groupId>
@@ -157,15 +264,15 @@ limitations under the License.
     </dependency>
 
     <dependency>
-	   <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-log4j12</artifactId>
-	   <version>1.7.5</version>
-    </dependency>
-    
-    <dependency>
 	    <groupId>mysql</groupId>
     	<artifactId>mysql-connector-java</artifactId>
 	    <version>5.1.26</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+        </exclusions>
     </dependency>
 
   </dependencies>
@@ -177,6 +284,57 @@ limitations under the License.
 
   <build>
     <finalName>sqoop</finalName>
-  </build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.8</version>
+        <executions>
+           <execution>
+             <id>unpack</id>
+             <phase>process-resources</phase>
+             <goals>
+               <goal>unpack</goal>
+             </goals>
+             <configuration>
+               <artifactItems>
+                 <artifactItem>
+            	   <groupId>org.apache.sqoop</groupId>
+                   <artifactId>sqoop-server</artifactId>
+                   <version>1.99.2</version>
+                   <type>war</type>
+                   <overWrite>false</overWrite>
+                   <outputDirectory>${project.build.directory}/unpackDir</outputDirectory>
+                   <includes>**/*.class</includes>
+                   <excludes>**/*test.class</excludes>
+                 </artifactItem>
+               </artifactItems>
+             </configuration>
+           </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>echodir</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <inherited>false</inherited>
+            <configuration>
+              <tasks>
+                <copy toDir="${project.build.directory}/classes">
+                   <fileset dir="${project.build.directory}/unpackDir/WEB-INF/classes/" />
+                </copy>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
 
+      </plugin>
+    </plugins>
+  </build>
 </project>
