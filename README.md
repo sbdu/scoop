@@ -1,4 +1,4 @@
-Scoop for Apache Sqoop
+Scoop - Web App for Apache Sqoop
 =====
 
 Web Interface and RESTful APIs for Apache Sqoop Server (Currently only 1.99.2 is tested)
