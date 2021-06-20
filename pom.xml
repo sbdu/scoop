@@ -279,7 +279,7 @@ limitations under the License.
 
   <properties>
     <jersey-version>1.17</jersey-version>
-    <junit.version>4.9</junit.version>
+    <junit.version>4.13.1</junit.version>
   </properties>
 
   <build>
